@@ -1,0 +1,30 @@
+{
+  "name": "cartier_hub",
+  "version": "1.0.0",
+  "description": "A content HUB for GQ x Cartier",
+  "main": "./src/js/main.js",
+  "scripts": {
+    "dev": "webpack-dev-server --hot --inline",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/swieder227/app_bootstrap.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/swieder227/app_bootstrap/issues"
+  },
+  "homepage": "https://github.com/swieder227/app_bootstrap#readme",
+  "devDependencies": {
+    "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "node-sass": "^3.7.0",
+    "path": "^0.12.7",
+    "sass-loader": "^3.2.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
