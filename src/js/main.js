@@ -1,16 +1,19 @@
-require("scss/site");
-
 require("jquery");
-require("js/components/TestComponent");
 
-var app = {
+require('scss/site.scss');
 
-  init: function(){
-    console.log("Sup from app.init()");  
+require("components/TestComponent/TestComponent.js");
+
+class App {
+  constructor(){
+    this.helloWorld();
   }
-  
+
+  helloWorld() {
+    console.log("hello world");
+  }
 }
 
 $(document).ready(function(){
-  app.init();
+  var app = new App();
 });

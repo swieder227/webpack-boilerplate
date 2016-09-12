@@ -9,3 +9,8 @@
         # Starts webpack-dev-server at http://localhost:8080 with hotloading
         # Watches src files for changes then recompiles
         $ npm run dev
+
+
+Update Package.json (name, desc, author)
+run npm install
+run npm start

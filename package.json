@@ -1,29 +1,37 @@
 {
-  "name": "cartier_hub",
+  "name": "webpack-boilerplate",
   "version": "1.0.0",
-  "description": "A content HUB for GQ x Cartier",
+  "description": "",
   "main": "./src/js/main.js",
   "scripts": {
-    "dev": "webpack-dev-server --hot --inline",
+    "start": "webpack-dev-server --inline",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/swieder227/app_bootstrap.git"
+    "url": "git+https://github.com/swieder227/webpack-boilerplate.git"
   },
-  "author": "",
+  "author": "swieder227",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/swieder227/app_bootstrap/issues"
+    "url": "https://github.com/swieder227/webpack-boilerplate/issues"
   },
-  "homepage": "https://github.com/swieder227/app_bootstrap#readme",
+  "homepage": "https://github.com/swieder227/webpack-boilerplate#readme",
   "devDependencies": {
+    "autoprefixer": "^6.4.1",
+    "babel-core": "^6.14.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.14.0",
     "css-loader": "^0.23.1",
     "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
+    "html-webpack-plugin": "^2.22.0",
     "node-sass": "^3.7.0",
     "path": "^0.12.7",
+    "postcss-loader": "^0.13.0",
     "sass-loader": "^3.2.0",
     "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"
   }
