@@ -19,11 +19,14 @@ const config = {
     // Transformations to files via loaders
     module: {
       loaders: [
+
+        // Compile Sass
         {
           test: /\.scss$/,
-          /* loaders: ['style', 'css?sourceMap', 'sass'] */
           loader: ExtractTextPlugin.extract('style', 'css?sourceMap!postcss!sass')
         },
+
+        // Compile JS with Babel
         {
           test: /\.js$/,
           exclude: /node_modules/,
@@ -32,11 +35,32 @@ const config = {
             presets: ['es2015']
           }
         },
+
+        // Image URL config. Generate data URI's for images smaller than 10,000 bytes
         {
-          test: /\.png$/,
-          loader: 'url-loader?limit=10000?name=[name]-[hash:6]'
-        }
+          test: /\.(png|gif|jpe?g|svg)$/i,
+          loader: 'url?limit=10000'
+        },
+
+        // Image file config. Generate hashed file names to make them easy to cache.
+        {
+         test: /\.(png|gif|jpe?g|svg)$/i,
+         loader: 'file?hash=sha512&digest=hex&name=[path][name]-[hash].[ext]'
+        },
+
+        // Inline font files smaller than 10000 bytes
+        { test: /\.(woff2?|ttf|eot|svg)$/, loader: 'url?limit=10000' },
+
+        // File loader for fonts larger than 10000 bytes.
+        { test: /\.(woff2?|ttf|eot|svg)$/, loader: 'file?name=[name].[ext]' }
       ]
+    },
+
+    // Set how require() finds base path
+    resolve: {
+      // Search for files w/ extension starting from root directory
+      extensions: ['', '.js', '.scss'],
+      root: [path.join(__dirname, 'src')]
     },
 
     // Additional plugins
@@ -51,14 +75,9 @@ const config = {
       })
     ],
 
-    // Set how require() finds base path
-    resolve: {
-      extensions: ['', '.js', '.scss'],
-      root: [path.join(__dirname, 'src')]
-    },
-
     // Configs for sass
     sassLoader: {
+      // Allow @imports to start from src
       includePaths: [path.resolve(__dirname, "src")]
     },
 
